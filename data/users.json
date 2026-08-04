@@ -1,1 +1,14 @@
-[{"email":"lucas.caetano@saude.gov.br","passwordHash":"1481da90dbac4d5ae69bdee3581415b117185c4dc9f7f2446bbb345abc2ff0ff","name":"Lucas Caetano","mustChangePassword":true}]
+[
+    {
+        "email":  "lucas.caetano@saude.gov.br",
+        "name":  "Lucas Caetano",
+        "mustChangePassword":  true,
+        "passwordHash":  "1481da90dbac4d5ae69bdee3581415b117185c4dc9f7f2446bbb345abc2ff0ff"
+    },
+    {
+        "email":  "aidyrton.lourenco@saude.gov.br",
+        "name":  "Aidyrton LourenÃƒÂ§o",
+        "mustChangePassword":  true,
+        "passwordHash":  "468a7d4516773c4c30f70a8341500d5ec0869dacc73b2d4b7c4bf9d11042f9f0"
+    }
+]
