@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gestão PMMB</title>
+  
+  <!-- Google Fonts: Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Material Symbols Outlined -->
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet" />
+  
+  <!-- Chart.js 4.x -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4"></script>
+  
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+<div id="app">
+  <!-- TOP NAVBAR -->
+  <nav id="navbar" class="navbar">
+    <div class="navbar-left">
+      <div class="navbar-logo">
+        <div class="logo-icon"><span class="material-symbols-outlined">dashboard</span></div>
+        <span class="logo-text">Gestão PMMB</span>
+      </div>
+      <div class="navbar-links">
+        <a href="#" class="nav-link active" data-page="visao-geral">Visão Geral</a>
+        <a href="#" class="nav-link" data-page="relatorios">Relatórios</a>
+        <a href="#" class="nav-link" data-page="dashboard">Dashboard</a>
+        <a href="#" class="nav-link" data-page="my-boards">My Boards</a>
+        <a href="#" class="nav-link" data-page="analytics">Analytics</a>
+      </div>
+    </div>
+    <div class="navbar-right">
+      <div class="search-global">
+        <span class="material-symbols-outlined">search</span>
+        <input type="text" id="global-search" placeholder="Search everything...">
+      </div>
+      <button class="nav-icon-btn"><span class="material-symbols-outlined">notifications</span></button>
+      <button class="nav-icon-btn"><span class="material-symbols-outlined">help</span></button>
+      <button class="nav-icon-btn"><span class="material-symbols-outlined">settings</span></button>
+      <div class="avatar">LC</div>
+    </div>
+  </nav>
+
+  <!-- PAGE CONTENT WRAPPER -->
+  <main id="main-content">
+    <!-- PAGE HEADER (for Visão Geral) -->
+    <div id="page-header" class="page-header">
+      <div class="page-header-icon"><span class="material-symbols-outlined">monitoring</span></div>
+      <div class="page-header-text">
+        <h1>Visão Geral</h1>
+        <p>Referências, Tutores, Supervisores e AIMEC</p>
+      </div>
+    </div>
+
+    <!-- GLOBAL SEARCH BAR -->
+    <div class="global-search-bar">
+      <span class="material-symbols-outlined">search</span>
+      <input type="text" id="content-search" placeholder="Busca global: médico, supervisor, município...">
+    </div>
+
+    <!-- SUB NAVIGATION TABS -->
+    <nav id="sub-nav" class="sub-nav">
+      <a href="#" class="sub-nav-item active" data-tab="painel">Painel PMMB</a>
+      <a href="#" class="sub-nav-item" data-tab="referencias">Referências</a>
+      <a href="#" class="sub-nav-item" data-tab="aimec">AIMEC</a>
+      <span class="sub-nav-separator">·</span>
+      <a href="#" class="sub-nav-item" data-tab="medicos">Médicos Ativos</a>
+      <a href="#" class="sub-nav-item" data-tab="tutores">Tutores</a>
+      <a href="#" class="sub-nav-item" data-tab="supervisores">Supervisores</a>
+      <a href="#" class="sub-nav-item" data-tab="secretarios">Secretários</a>
+      <span class="sub-nav-separator">·</span>
+      <a href="#" class="sub-nav-item" data-tab="instituicoes">Instituições</a>
+      <a href="#" class="sub-nav-item" data-tab="qualidade">Qualidade de Dados</a>
+    </nav>
+
+    <!-- TAB CONTENT AREAS -->
+    <div id="tab-painel" class="tab-content active"></div>
+    <div id="tab-referencias" class="tab-content"></div>
+    <div id="tab-aimec" class="tab-content"></div>
+    <div id="tab-medicos" class="tab-content"></div>
+    <div id="tab-tutores" class="tab-content"></div>
+    <div id="tab-supervisores" class="tab-content"></div>
+    <div id="tab-secretarios" class="tab-content"></div>
+    <div id="tab-instituicoes" class="tab-content"></div>
+    <div id="tab-qualidade" class="tab-content"></div>
+  </main>
+
+  <!-- RELATÓRIOS PAGE (separate page, hidden by default) -->
+  <main id="relatorios-page" class="page-content" style="display:none;">
+    <div class="page-header">
+      <div class="page-header-icon" style="background:#3b82f6;"><span class="material-symbols-outlined">assessment</span></div>
+      <div class="page-header-text">
+        <h1>Relatórios de Processos</h1>
+        <p>Controle de processos por município, tipo, status e referência</p>
+      </div>
+    </div>
+    <div id="tab-relatorios"></div>
+  </main>
+
+  <!-- MODAL OVERLAY -->
+  <div id="modal-overlay" class="modal-overlay">
+    <div id="modal-box" class="modal">
+      <div class="modal-header">
+        <h2 id="modal-title"></h2>
+        <button id="modal-close" class="modal-close-btn"><span class="material-symbols-outlined">close</span></button>
+      </div>
+      <div id="modal-body" class="modal-body"></div>
+      <div id="modal-footer" class="modal-footer"></div>
+    </div>
+  </div>
+
+  <!-- TOAST CONTAINER -->
+  <div id="toast-container" class="toast-container"></div>
+</div>
+
+<!-- SCRIPTS (order matters!) -->
+<script src="js/utils.js"></script>
+<script src="js/components.js"></script>
+<script src="js/painel.js"></script>
+<script src="js/referencias.js"></script>
+<script src="js/aimec.js"></script>
+<script src="js/medicos.js"></script>
+<script src="js/tutores.js"></script>
+<script src="js/supervisores.js"></script>
+<script src="js/secretarios.js"></script>
+<script src="js/instituicoes.js"></script>
+<script src="js/qualidade.js"></script>
+<script src="js/relatorios.js"></script>
+<script src="js/app.js"></script>
+
+</body>
+</html>
