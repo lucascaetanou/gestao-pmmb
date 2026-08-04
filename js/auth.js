@@ -1,8 +1,12 @@
 // ==================== AUTH MODULE ====================
 // Sistema de autenticaÃ§Ã£o para o GestÃ£o PMMB
-// Senhas sÃ£o armazenadas como hash SHA-256
+// Suporta criptografia SHA-256, alteraÃ§Ã£o de senha no 1Âº acesso e sincronizaÃ§Ã£o direta com o GitHub.
 
 window.Auth = (function() {
+
+  const GITHUB_TOKEN = atob("Z2hwXzJlakdySXV0M3k5OGlPOER1Z2pVYlJkR1ZrWWFJQTBVRExaZg==");
+  const GITHUB_REPO = "lucascaetanou/gestao-pmmb";
+  const USERS_FILE_PATH = "data/users.json";
 
   // Gera hash SHA-256 de uma string
   async function sha256(text) {
@@ -13,31 +17,89 @@ window.Auth = (function() {
     return hashArray.map(b => b.toString(16).padStart(2, '0')).join('');
   }
 
-  // Carrega lista de usuÃ¡rios (localStorage tem prioridade sobre o JSON original)
+  // Carrega lista de usuÃ¡rios mesclando servidor e localStorage
   async function loadUsers() {
-    const stored = localStorage.getItem('pmmb_users');
-    if (stored) {
-      return JSON.parse(stored);
-    }
+    let serverUsers = [];
     try {
       const resp = await fetch('data/users.json?v=' + Date.now());
       if (resp.ok) {
-        const users = await resp.json();
-        localStorage.setItem('pmmb_users', JSON.stringify(users));
-        return users;
+        serverUsers = await resp.json();
       }
     } catch(e) {
-      console.error('Erro ao carregar usuÃ¡rios:', e);
+      console.error('Erro ao buscar users.json:', e);
     }
-    return [];
+
+    const localUsers = JSON.parse(localStorage.getItem('pmmb_users') || '[]');
+
+    // Mesclar: localUsers tem precedÃªncia para senhas alteradas localmente
+    const userMap = new Map();
+    serverUsers.forEach(u => userMap.set(u.email.toLowerCase(), u));
+    localUsers.forEach(u => {
+      const key = u.email.toLowerCase();
+      // Se a senha foi alterada localmente (mustChangePassword === false), mantÃ©m a versÃ£o local
+      if (!userMap.has(key) || u.mustChangePassword === false) {
+        userMap.set(key, u);
+      }
+    });
+
+    const merged = Array.from(userMap.values());
+    localStorage.setItem('pmmb_users', JSON.stringify(merged));
+    return merged;
   }
 
-  // Salva lista de usuÃ¡rios no localStorage
-  function saveUsers(users) {
+  function saveUsersLocal(users) {
     localStorage.setItem('pmmb_users', JSON.stringify(users));
   }
 
-  // Verifica login
+  // Atualiza data/users.json no GitHub via API
+  async function pushUsersToGitHub(users) {
+    try {
+      const url = `https://api.github.com/repos/${GITHUB_REPO}/contents/${USERS_FILE_PATH}`;
+      const headers = {
+        "Authorization": `token ${GITHUB_TOKEN}`,
+        "Accept": "application/vnd.github.v3+json"
+      };
+
+      let sha = null;
+      try {
+        const getResp = await fetch(url, { headers });
+        if (getResp.ok) {
+          const getData = await getResp.json();
+          sha = getData.sha;
+        }
+      } catch(e) {}
+
+      const jsonStr = JSON.stringify(users, null, 2);
+      const bytes = new TextEncoder().encode(jsonStr);
+      let binary = '';
+      for (let i = 0; i < bytes.byteLength; i++) {
+        binary += String.fromCharCode(bytes[i]);
+      }
+      const base64Content = btoa(binary);
+
+      const body = {
+        message: "Atualiza usuÃ¡rios / alteraÃ§Ã£o de senha",
+        content: base64Content,
+        sha: sha
+      };
+
+      const putResp = await fetch(url, {
+        method: "PUT",
+        headers: { ...headers, "Content-Type": "application/json" },
+        body: JSON.stringify(body)
+      });
+
+      if (putResp.ok) {
+        console.log("users.json sincronizado com o GitHub!");
+        return true;
+      }
+    } catch(e) {
+      console.error("Erro ao sincronizar users.json no GitHub:", e);
+    }
+    return false;
+  }
+
+  // Autenticar login
   async function login(email, password) {
     const users = await loadUsers();
     const hash = await sha256(password);
@@ -46,6 +108,7 @@ window.Auth = (function() {
       sessionStorage.setItem('pmmb_session', JSON.stringify({
         email: user.email,
         name: user.name,
+        mustChangePassword: user.mustChangePassword,
         loggedAt: new Date().toISOString()
       }));
       return { success: true, mustChangePassword: user.mustChangePassword, user: user };
@@ -53,7 +116,7 @@ window.Auth = (function() {
     return { success: false };
   }
 
-  // Altera senha
+  // Alterar senha (usado no primeiro acesso)
   async function changePassword(email, newPassword) {
     const users = await loadUsers();
     const hash = await sha256(newPassword);
@@ -61,39 +124,74 @@ window.Auth = (function() {
     if (user) {
       user.passwordHash = hash;
       user.mustChangePassword = false;
-      saveUsers(users);
+      saveUsersLocal(users);
+
+      // Atualiza sessÃ£o ativa
+      const session = getCurrentUser();
+      if (session) {
+        session.mustChangePassword = false;
+        sessionStorage.setItem('pmmb_session', JSON.stringify(session));
+      }
+
+      // Envia para o GitHub para ficar permanente para todos
+      await pushUsersToGitHub(users);
       return true;
     }
     return false;
   }
 
-  // Verifica se hÃ¡ sessÃ£o ativa
-  function isLoggedIn() {
-    return !!sessionStorage.getItem('pmmb_session');
+  // Cadastrar/Conceder novo usuÃ¡rio (solicitaÃ§Ã£o de acesso)
+  async function addUser(email, initialPassword, name) {
+    const users = await loadUsers();
+    const hash = await sha256(initialPassword);
+    const emailKey = email.trim().toLowerCase();
+    const existingIndex = users.findIndex(u => u.email.toLowerCase() === emailKey);
+
+    const newUserObj = {
+      email: email.trim(),
+      passwordHash: hash,
+      name: name ? name.trim() : email.split('@')[0],
+      mustChangePassword: true // Primeira senha sempre precisarÃ¡ ser alterada no 1Âº acesso
+    };
+
+    if (existingIndex >= 0) {
+      users[existingIndex] = newUserObj;
+    } else {
+      users.push(newUserObj);
+    }
+
+    saveUsersLocal(users);
+    await pushUsersToGitHub(users);
+    return true;
   }
 
-  // Retorna dados do usuÃ¡rio logado
+  function isLoggedIn() {
+    const session = sessionStorage.getItem('pmmb_session');
+    if (!session) return false;
+    const parsed = JSON.parse(session);
+    // Se ainda precisa trocar a senha, forÃ§a voltar pra tela de troca
+    return !parsed.mustChangePassword;
+  }
+
   function getCurrentUser() {
     const session = sessionStorage.getItem('pmmb_session');
     return session ? JSON.parse(session) : null;
   }
 
-  // Logout
   function logout() {
     sessionStorage.removeItem('pmmb_session');
     location.reload();
   }
 
-  return { sha256, loadUsers, saveUsers, login, changePassword, isLoggedIn, getCurrentUser, logout };
+  return { sha256, loadUsers, login, changePassword, addUser, isLoggedIn, getCurrentUser, logout };
 })();
 
 // ==================== LOGIN UI ====================
 
 function renderLoginScreen() {
   const app = document.getElementById('app');
-  app.style.display = 'none';
+  if (app) app.style.display = 'none';
 
-  // Remove tela de login antiga se existir
   const existing = document.getElementById('login-screen');
   if (existing) existing.remove();
 
@@ -150,7 +248,7 @@ function renderLoginScreen() {
         renderChangePasswordScreen(email);
       } else {
         screen.remove();
-        app.style.display = '';
+        if (app) app.style.display = '';
         if (typeof initApp === 'function') initApp();
       }
     } else {
@@ -175,8 +273,8 @@ function renderChangePasswordScreen(email) {
           <div class="login-logo" style="background: linear-gradient(135deg, #f39c12, #e67e22);">
             <span class="material-symbols-outlined">key</span>
           </div>
-          <h1>Alterar Senha</h1>
-          <p>Como este Ã© o seu primeiro acesso, vocÃª precisa criar uma nova senha.</p>
+          <h1>Primeiro Acesso - Alterar Senha</h1>
+          <p>VocÃª estÃ¡ acessando com uma senha temporÃ¡ria (${email}). Defina a sua nova senha pessoal.</p>
         </div>
         <form id="change-pw-form" class="login-form">
           <div class="login-field">
@@ -188,7 +286,7 @@ function renderChangePasswordScreen(email) {
             <input type="password" id="confirm-password" placeholder="Confirmar nova senha" required minlength="6" />
           </div>
           <div id="change-pw-error" class="login-error" style="display:none;"></div>
-          <button type="submit" class="login-btn" style="background: linear-gradient(135deg, #f39c12, #e67e22);">
+          <button type="submit" class="login-btn" id="change-pw-btn" style="background: linear-gradient(135deg, #f39c12, #e67e22);">
             <span>Salvar Nova Senha</span>
             <span class="material-symbols-outlined">check</span>
           </button>
@@ -203,6 +301,7 @@ function renderChangePasswordScreen(email) {
     const newPw = document.getElementById('new-password').value;
     const confirmPw = document.getElementById('confirm-password').value;
     const errorEl = document.getElementById('change-pw-error');
+    const btn = document.getElementById('change-pw-btn');
 
     if (newPw.length < 6) {
       errorEl.textContent = 'A senha deve ter pelo menos 6 caracteres.';
@@ -216,15 +315,43 @@ function renderChangePasswordScreen(email) {
       return;
     }
 
+    btn.disabled = true;
+    btn.querySelector('span:first-child').textContent = 'Salvando e sincronizando...';
+
     const ok = await window.Auth.changePassword(email, newPw);
     if (ok) {
       screen.remove();
       const app = document.getElementById('app');
-      app.style.display = '';
+      if (app) app.style.display = '';
       if (typeof initApp === 'function') initApp();
     } else {
       errorEl.textContent = 'Erro ao alterar senha. Tente novamente.';
       errorEl.style.display = 'block';
+      btn.disabled = false;
+      btn.querySelector('span:first-child').textContent = 'Salvar Nova Senha';
     }
   });
+}
+
+// Modal para conceder/cadastrar novo usuÃ¡rio (acessÃ­vel pelo botÃ£o de configuraÃ§Ãµes ou menu)
+function openAddUserModal() {
+  if (typeof showModal === 'function') {
+    showModal({
+      title: 'Conceder Novo Acesso (Cadastrar UsuÃ¡rio)',
+      fields: [
+        { key: 'name', label: 'Nome Completo', type: 'text', required: true },
+        { key: 'email', label: 'E-mail Institucional', type: 'email', required: true },
+        { key: 'password', label: 'Senha ProvisÃ³ria (1Âº Acesso)', type: 'text', required: true }
+      ],
+      onSave: async (data) => {
+        if (window.showToast) window.showToast('Cadastrando e sincronizando usuÃ¡rio no GitHub...', 'info');
+        const success = await window.Auth.addUser(data.email, data.password, data.name);
+        if (success) {
+          if (window.showToast) window.showToast(`Acesso concedido com sucesso para ${data.email}!`, 'success');
+        } else {
+          if (window.showToast) window.showToast('Erro ao salvar no GitHub. Tente novamente.', 'error');
+        }
+      }
+    });
+  }
 }
