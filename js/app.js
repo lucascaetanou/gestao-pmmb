@@ -100,6 +100,17 @@ async function initApp() {
     });
   });
   
+  // ConfiguraÃ§Ãµes -> Cadastrar Novo UsuÃ¡rio
+  const btnSettings = document.getElementById('btn-settings');
+  if (btnSettings) {
+    btnSettings.addEventListener('click', (e) => {
+      e.preventDefault();
+      if (typeof openAddUserModal === 'function') {
+        openAddUserModal();
+      }
+    });
+  }
+
   // Modal close
   const modalClose = document.getElementById('modal-close');
   if (modalClose) modalClose.addEventListener('click', hideModal);
