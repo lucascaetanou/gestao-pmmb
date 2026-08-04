@@ -100,16 +100,18 @@ async function initApp() {
     });
   });
   
-  // ConfiguraÃ§Ãµes -> Cadastrar Novo UsuÃ¡rio
-  const btnSettings = document.getElementById('btn-settings');
-  if (btnSettings) {
-    btnSettings.addEventListener('click', (e) => {
-      e.preventDefault();
-      if (typeof openAddUserModal === 'function') {
-        openAddUserModal();
-      }
-    });
-  }
+  // ConfiguraÃ§Ãµes e BotÃ£o Navbar -> Cadastrar Novo UsuÃ¡rio
+  ['btn-settings', 'btn-add-user-nav'].forEach(id => {
+    const btn = document.getElementById(id);
+    if (btn) {
+      btn.addEventListener('click', (e) => {
+        e.preventDefault();
+        if (typeof openAddUserModal === 'function') {
+          openAddUserModal();
+        }
+      });
+    }
+  });
 
   // Modal close
   const modalClose = document.getElementById('modal-close');
