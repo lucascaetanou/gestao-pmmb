@@ -1,38 +1,1253 @@
 ﻿[
     {
         "id":  1,
-        "instituicao":  "ESCOLA DE SAUDE PUBLICA DO CEARA",
-        "situacao":  "Ativo",
-        "titulacao":  "Mestrado",
-        "nome":  "ROBERTO RIBEIRO MARANHAO",
-        "especialidade":  "Medicina de Familia e Comunidade",
-        "residencia":  "AQUIRAZ"
+        "nome":  "DILA LUDMILA RAULINO LEITO",
+        "residencia":  "SOBRAL",
+        "instituicao":  "ESCOLA DE SADE DA FAMLIA VISCONDE DE SABIA",
+        "titulacao":  "Graduao",
+        "especialidade":  "No possui",
+        "situacao":  "Ativo"
     },
     {
         "id":  2,
-        "instituicao":  "UNIVERSIDADE FEDERAL DO CEARA",
-        "situacao":  "Ativo",
-        "titulacao":  "Residencia Medica",
-        "nome":  "Silvio Paulo da Costa Araujo Rocha Furtado",
-        "especialidade":  "Hematologia e Hemoterapia",
-        "residencia":  "FORTALEZA"
+        "nome":  "Adriana Valeria Pereira Assuno",
+        "residencia":  "FORTALEZA",
+        "instituicao":  "SECRETARIA MUNICIPAL DE SADE DE FORTALEZA",
+        "titulacao":  "Mestrado",
+        "especialidade":  "Medicina de Famlia e Comunidade",
+        "situacao":  "Ativo"
     },
     {
         "id":  3,
-        "instituicao":  "ESCOLA DE SAUDE PUBLICA DO CEARA",
-        "situacao":  "Ativo",
+        "nome":  "AGOSTINHO HERMES DE MEDEIROS NETO",
+        "residencia":  "JUAZEIRO DO NORTE",
+        "instituicao":  "UNIVERSIDADE FEDERAL DO CARIRI",
         "titulacao":  "Doutorado",
-        "nome":  "Tatiana Monteiro Fiuza",
-        "especialidade":  "Medicina de Familia e Comunidade",
-        "residencia":  "FORTALEZA"
+        "especialidade":  "Pneumologia",
+        "situacao":  "Ativo"
     },
     {
         "id":  4,
-        "instituicao":  "SECRETARIA MUNICIPAL DE SAUDE DE FORTALEZA",
-        "situacao":  "Ativo",
+        "nome":  "ALBERTO NOVAES RAMOS JNIOR",
+        "residencia":  "FORTALEZA",
+        "instituicao":  "UNIVERSIDADE FEDERAL DO CEAR",
         "titulacao":  "Doutorado",
-        "nome":  "Vera Lucia de Azevedo Dantas",
-        "especialidade":  "Saude Coletiva",
-        "residencia":  "FORTALEZA"
+        "especialidade":  "Infectologia",
+        "situacao":  "Ativo"
+    },
+    {
+        "id":  5,
+        "nome":  "Alexandre Augusto Bastos Moura",
+        "residencia":  "SOBRAL",
+        "instituicao":  "ESCOLA DE SADE DA FAMLIA VISCONDE DE SABIA",
+        "titulacao":  "Residncia Mdica",
+        "especialidade":  "Reumatologia",
+        "situacao":  "Ativo"
+    },
+    {
+        "id":  6,
+        "nome":  "ALINE DE FREITAS VELASCO WERNECK",
+        "residencia":  "REDENCAO",
+        "instituicao":  "UNIVERSIDADE DA INTEGRAO INTERNACIONAL DA LUSOFONIA AFRO-BRASILEIRA",
+        "titulacao":  "Mestrado",
+        "especialidade":  "Medicina de Famlia e Comunidade",
+        "situacao":  "Ativo"
+    },
+    {
+        "id":  7,
+        "nome":  "ALISSON CARPINO FREITAS",
+        "residencia":  "FORTALEZA",
+        "instituicao":  "ESCOLA DE SADE PBLICA DO CEAR",
+        "titulacao":  "Residncia Mdica",
+        "especialidade":  "Medicina de Famlia e Comunidade",
+        "situacao":  "Ativo"
+    },
+    {
+        "id":  8,
+        "nome":  "ALLAN DENIZARD MOTA MARINHO",
+        "residencia":  "FORTALEZA",
+        "instituicao":  "ESCOLA DE SADE PBLICA DO CEAR",
+        "titulacao":  "Residncia Mdica",
+        "especialidade":  "Medicina de Famlia e Comunidade",
+        "situacao":  "Ativo"
+    },
+    {
+        "id":  9,
+        "nome":  "Almir de Castro Neves Filho",
+        "residencia":  "FORTALEZA",
+        "instituicao":  "UNIVERSIDADE FEDERAL DO CEAR",
+        "titulacao":  "Mestrado",
+        "especialidade":  "Pediatria",
+        "situacao":  "Ativo"
+    },
+    {
+        "id":  10,
+        "nome":  "Ana Claudia do Espirito Santo Silva",
+        "residencia":  "FORTALEZA",
+        "instituicao":  "UNIVERSIDADE FEDERAL DO CEAR",
+        "titulacao":  "Doutorado",
+        "especialidade":  "Medicina de Famlia e Comunidade",
+        "situacao":  "Ativo"
+    },
+    {
+        "id":  11,
+        "nome":  "ANA CRISTINA FIUZA DE ALBUQUERQUE",
+        "residencia":  "SOBRAL",
+        "instituicao":  "ESCOLA DE SADE DA FAMLIA VISCONDE DE SABIA",
+        "titulacao":  "Residncia Mdica",
+        "especialidade":  "Cirurgia Geral",
+        "situacao":  "Ativo"
+    },
+    {
+        "id":  12,
+        "nome":  "Ana Dbora Matos da Costa",
+        "residencia":  "FORTALEZA",
+        "instituicao":  "ESCOLA DE SADE PBLICA DO CEAR",
+        "titulacao":  "Residncia Mdica",
+        "especialidade":  "Medicina de Famlia e Comunidade",
+        "situacao":  "Ativo"
+    },
+    {
+        "id":  13,
+        "nome":  "Ana lida Nogueira Souza",
+        "residencia":  "SOBRAL",
+        "instituicao":  "ESCOLA DE SADE DA FAMLIA VISCONDE DE SABIA",
+        "titulacao":  "Graduao",
+        "especialidade":  "",
+        "situacao":  "Ativo"
+    },
+    {
+        "id":  14,
+        "nome":  "ANAMARIA CAVALCANTE E SILVA",
+        "residencia":  "FORTALEZA",
+        "instituicao":  "SECRETARIA MUNICIPAL DE SADE DE FORTALEZA",
+        "titulacao":  "Doutorado",
+        "especialidade":  "Sade Coletiva",
+        "situacao":  "Ativo"
+    },
+    {
+        "id":  15,
+        "nome":  "ANANNANDY CUNHA",
+        "residencia":  "SOBRAL",
+        "instituicao":  "ESCOLA DE SADE DA FAMLIA VISCONDE DE SABIA",
+        "titulacao":  "Residncia Mdica",
+        "especialidade":  "Medicina de Famlia e Comunidade",
+        "situacao":  "Ativo"
+    },
+    {
+        "id":  16,
+        "nome":  "ANA PAULA DIAS RANGEL MONTENEGRO",
+        "residencia":  "FORTALEZA",
+        "instituicao":  "UNIVERSIDADE FEDERAL DO CEAR",
+        "titulacao":  "Doutorado",
+        "especialidade":  "Pediatria",
+        "situacao":  "Ativo"
+    },
+    {
+        "id":  17,
+        "nome":  "ANA PAULA DIAS SA",
+        "residencia":  "FORTALEZA",
+        "instituicao":  "ESCOLA DE SADE PBLICA DO CEAR",
+        "titulacao":  "Mestrado",
+        "especialidade":  "Outros",
+        "situacao":  "Ativo"
+    },
+    {
+        "id":  18,
+        "nome":  "Ana Veruska Martins de Carvalho Bastos",
+        "residencia":  "SOBRAL",
+        "instituicao":  "ESCOLA DE SADE DA FAMLIA VISCONDE DE SABIA",
+        "titulacao":  "Mestrado",
+        "especialidade":  "Medicina de Famlia e Comunidade",
+        "situacao":  "Ativo"
+    },
+    {
+        "id":  19,
+        "nome":  "ANDERSON DIAS ARRUDA",
+        "residencia":  "SOBRAL",
+        "instituicao":  "ESCOLA DE SADE DA FAMLIA VISCONDE DE SABIA",
+        "titulacao":  "Mestrado",
+        "especialidade":  "Clnica Mdica",
+        "situacao":  "Ativo"
+    },
+    {
+        "id":  20,
+        "nome":  "ANDREA DE SOUZA GONCALVES PEREIRA",
+        "residencia":  "FORTALEZA",
+        "instituicao":  "SECRETARIA MUNICIPAL DE SADE DE FORTALEZA",
+        "titulacao":  "Mestrado",
+        "especialidade":  "Medicina de Famlia e Comunidade",
+        "situacao":  "Ativo"
+    },
+    {
+        "id":  21,
+        "nome":  "Andrea Tavares Barbosa",
+        "residencia":  "FORTALEZA",
+        "instituicao":  "UNIVERSIDADE FEDERAL DO CEAR",
+        "titulacao":  "Residncia Mdica",
+        "especialidade":  "Medicina de Famlia e Comunidade",
+        "situacao":  "Ativo"
+    },
+    {
+        "id":  22,
+        "nome":  "ANDRE CORDEIRO MARQUES",
+        "residencia":  "EUSEBIO",
+        "instituicao":  "SECRETARIA MUNICIPAL DE SADE DE FORTALEZA",
+        "titulacao":  "Mestrado",
+        "especialidade":  "Medicina de Famlia e Comunidade",
+        "situacao":  "Ativo"
+    },
+    {
+        "id":  23,
+        "nome":  "ANNA SILVIA DE OLIVEIRA FAANHA",
+        "residencia":  "FORTALEZA",
+        "instituicao":  "UNIVERSIDADE FEDERAL DO CEAR",
+        "titulacao":  "Mestrado",
+        "especialidade":  "Medicina de Famlia e Comunidade",
+        "situacao":  "Ativo"
+    },
+    {
+        "id":  24,
+        "nome":  "Antonio Flavio Queiroz de Oliveira",
+        "residencia":  "SOBRAL",
+        "instituicao":  "ESCOLA DE SADE DA FAMLIA VISCONDE DE SABIA",
+        "titulacao":  "Especializao",
+        "especialidade":  "Dermatologia",
+        "situacao":  "Ativo"
+    },
+    {
+        "id":  25,
+        "nome":  "ANTONIO JEAN ANDR DA SILVA",
+        "residencia":  "SAO BENEDITO",
+        "instituicao":  "ESCOLA DE SADE DA FAMLIA VISCONDE DE SABIA",
+        "titulacao":  "Especializao",
+        "especialidade":  "Medicina de Famlia e Comunidade",
+        "situacao":  "Ativo"
+    },
+    {
+        "id":  26,
+        "nome":  "ARISTFANES GUGLIELMO FARIAS RIBEIRO",
+        "residencia":  "JUAZEIRO DO NORTE",
+        "instituicao":  "ESCOLA DE SADE PBLICA DO CEAR",
+        "titulacao":  "Residncia Mdica",
+        "especialidade":  "Medicina de Famlia e Comunidade",
+        "situacao":  "Ativo"
+    },
+    {
+        "id":  27,
+        "nome":  "BLENO SILVA RIBEIRO",
+        "residencia":  "SOBRAL",
+        "instituicao":  "ESCOLA DE SADE DA FAMLIA VISCONDE DE SABIA",
+        "titulacao":  "Especializao",
+        "especialidade":  "Medicina de Famlia e Comunidade",
+        "situacao":  "Ativo"
+    },
+    {
+        "id":  28,
+        "nome":  "Brgida Emlia Pereira Quezado",
+        "residencia":  "FORTALEZA",
+        "instituicao":  "SECRETARIA MUNICIPAL DE SADE DE FORTALEZA",
+        "titulacao":  "Mestrado",
+        "especialidade":  "Medicina de Famlia e Comunidade",
+        "situacao":  "Ativo"
+    },
+    {
+        "id":  29,
+        "nome":  "BRUNO ALVES SOBREIRA",
+        "residencia":  "SOBRAL",
+        "instituicao":  "ESCOLA DE SADE DA FAMLIA VISCONDE DE SABIA",
+        "titulacao":  "Especializao",
+        "especialidade":  "Medicina de Famlia e Comunidade",
+        "situacao":  "Ativo"
+    },
+    {
+        "id":  30,
+        "nome":  "Bruno Machado Furtado",
+        "residencia":  "FORTALEZA",
+        "instituicao":  "SECRETARIA MUNICIPAL DE SADE DE FORTALEZA",
+        "titulacao":  "Residncia Mdica",
+        "especialidade":  "Medicina de Famlia e Comunidade",
+        "situacao":  "Ativo"
+    },
+    {
+        "id":  31,
+        "nome":  "Bruno Souza Benevides",
+        "residencia":  "FORTALEZA",
+        "instituicao":  "SECRETARIA MUNICIPAL DE SADE DE FORTALEZA",
+        "titulacao":  "Doutorado",
+        "especialidade":  "Medicina de Famlia e Comunidade",
+        "situacao":  "Ativo"
+    },
+    {
+        "id":  32,
+        "nome":  "Carla Kerr Pontes",
+        "residencia":  "FORTALEZA",
+        "instituicao":  "UNIVERSIDADE FEDERAL DO CEAR",
+        "titulacao":  "Mestrado",
+        "especialidade":  "Medicina de Famlia e Comunidade",
+        "situacao":  "Ativo"
+    },
+    {
+        "id":  33,
+        "nome":  "CAROLINA LIMA CHOW CASTILLO",
+        "residencia":  "FORTALEZA",
+        "instituicao":  "ESCOLA DE SADE PBLICA DO CEAR",
+        "titulacao":  "Residncia Mdica",
+        "especialidade":  "Clnica Mdica",
+        "situacao":  "Ativo"
+    },
+    {
+        "id":  34,
+        "nome":  "CATARINE CAVALCANTE ARY",
+        "residencia":  "SOBRAL",
+        "instituicao":  "ESCOLA DE SADE DA FAMLIA VISCONDE DE SABIA",
+        "titulacao":  "Graduao",
+        "especialidade":  "Medicina de Famlia e Comunidade",
+        "situacao":  "Ativo"
+    },
+    {
+        "id":  35,
+        "nome":  "Cicera Amanda Mota Seabra",
+        "residencia":  "CRATO",
+        "instituicao":  "ESCOLA DE SADE PBLICA DO CEAR",
+        "titulacao":  "Mestrado",
+        "especialidade":  "Medicina de Famlia e Comunidade",
+        "situacao":  "Ativo"
+    },
+    {
+        "id":  36,
+        "nome":  "Cristiana Ferreira Macedo",
+        "residencia":  "JUAZEIRO DO NORTE",
+        "instituicao":  "UNIVERSIDADE FEDERAL DO CARIRI",
+        "titulacao":  "Residncia Mdica",
+        "especialidade":  "Clnica Mdica",
+        "situacao":  "Ativo"
+    },
+    {
+        "id":  37,
+        "nome":  "Damito Robson Xavier de Souza",
+        "residencia":  "CRATO",
+        "instituicao":  "UNIVERSIDADE FEDERAL DO CARIRI",
+        "titulacao":  "Mestrado",
+        "especialidade":  "Outros",
+        "situacao":  "Ativo"
+    },
+    {
+        "id":  38,
+        "nome":  "Diego Levi Silveira Monteiro",
+        "residencia":  "SOBRAL",
+        "instituicao":  "ESCOLA DE SADE DA FAMLIA VISCONDE DE SABIA",
+        "titulacao":  "Doutorado",
+        "especialidade":  "Cardiologia",
+        "situacao":  "Ativo"
+    },
+    {
+        "id":  39,
+        "nome":  "Elaine Lopes Pedrosa Bomfim",
+        "residencia":  "FORTALEZA",
+        "instituicao":  "SECRETARIA MUNICIPAL DE SADE DE FORTALEZA",
+        "titulacao":  "Especializao",
+        "especialidade":  "Medicina de Famlia e Comunidade",
+        "situacao":  "Ativo"
+    },
+    {
+        "id":  40,
+        "nome":  "ELOILDA MARIA DE AGUIAR SILVA",
+        "residencia":  "FORTALEZA",
+        "instituicao":  "ESCOLA DE SADE PBLICA DO CEAR",
+        "titulacao":  "Residncia Mdica",
+        "especialidade":  "Endocrinologia e Metabologia",
+        "situacao":  "Ativo"
+    },
+    {
+        "id":  41,
+        "nome":  "Emilio Rossetti Pacheco",
+        "residencia":  "FORTALEZA",
+        "instituicao":  "UNIVERSIDADE FEDERAL DO CEAR",
+        "titulacao":  "Residncia Mdica",
+        "especialidade":  "Medicina de Famlia e Comunidade",
+        "situacao":  "Ativo"
+    },
+    {
+        "id":  42,
+        "nome":  "Emmanuela Quental Callou de S",
+        "residencia":  "BARBALHA",
+        "instituicao":  "UNIVERSIDADE FEDERAL DO CARIRI",
+        "titulacao":  "Doutorado",
+        "especialidade":  "Endocrinologia e Metabologia",
+        "situacao":  "Ativo"
+    },
+    {
+        "id":  43,
+        "nome":  "Erich Pires Lisboa",
+        "residencia":  "JUAZEIRO DO NORTE",
+        "instituicao":  "UNIVERSIDADE FEDERAL DO CARIRI",
+        "titulacao":  "Mestrado",
+        "especialidade":  "Clnica Mdica",
+        "situacao":  "Ativo"
+    },
+    {
+        "id":  44,
+        "nome":  "EULLIA DIGENES ALMEIDA",
+        "residencia":  "FORTALEZA",
+        "instituicao":  "ESCOLA DE SADE PBLICA DO CEAR",
+        "titulacao":  "Residncia Mdica",
+        "especialidade":  "Clnica Mdica",
+        "situacao":  "Ativo"
+    },
+    {
+        "id":  45,
+        "nome":  "FERNANDO PAIXO DA COSTA",
+        "residencia":  "CANINDE",
+        "instituicao":  "UNIVERSIDADE DA INTEGRAO INTERNACIONAL DA LUSOFONIA AFRO-BRASILEIRA",
+        "titulacao":  "Mestrado",
+        "especialidade":  "Medicina de Famlia e Comunidade",
+        "situacao":  "Ativo"
+    },
+    {
+        "id":  46,
+        "nome":  "FRANCISCA CLEANE RODRIGUES DE SOUSA",
+        "residencia":  "FORTALEZA",
+        "instituicao":  "SECRETARIA MUNICIPAL DE SADE DE FORTALEZA",
+        "titulacao":  "Graduao",
+        "especialidade":  "Clnica Mdica",
+        "situacao":  "Ativo"
+    },
+    {
+        "id":  47,
+        "nome":  "FRANCISCA VIRGINIA DE SOUSA FURTADO",
+        "residencia":  "FORTALEZA",
+        "instituicao":  "ESCOLA DE SADE PBLICA DO CEAR",
+        "titulacao":  "Mestrado",
+        "especialidade":  "Medicina de Famlia e Comunidade",
+        "situacao":  "Ativo"
+    },
+    {
+        "id":  48,
+        "nome":  "Francisco Airton Rangel Filho",
+        "residencia":  "SOBRAL",
+        "instituicao":  "ESCOLA DE SADE DA FAMLIA VISCONDE DE SABIA",
+        "titulacao":  "Mestrado",
+        "especialidade":  "Ginecologia e Obstetrcia",
+        "situacao":  "Ativo"
+    },
+    {
+        "id":  49,
+        "nome":  "FRANCISCO MARCOS DE SOUSA SILVINO",
+        "residencia":  "SOBRAL",
+        "instituicao":  "ESCOLA DE SADE DA FAMLIA VISCONDE DE SABIA",
+        "titulacao":  "Graduao",
+        "especialidade":  "No possui",
+        "situacao":  "Ativo"
+    },
+    {
+        "id":  50,
+        "nome":  "FRANCISCO ROBERTO DE ARAUJO NOGUEIRA",
+        "residencia":  "FORTALEZA",
+        "instituicao":  "UNIVERSIDADE DA INTEGRAO INTERNACIONAL DA LUSOFONIA AFRO-BRASILEIRA",
+        "titulacao":  "Mestrado",
+        "especialidade":  "Medicina de Famlia e Comunidade",
+        "situacao":  "Ativo"
+    },
+    {
+        "id":  51,
+        "nome":  "geamberg einstein cruz macedo",
+        "residencia":  "JUAZEIRO DO NORTE",
+        "instituicao":  "UNIVERSIDADE FEDERAL DO CARIRI",
+        "titulacao":  "Residncia Mdica",
+        "especialidade":  "Cirurgia de Cabea e Pescoo",
+        "situacao":  "Ativo"
+    },
+    {
+        "id":  52,
+        "nome":  "GEILSON GONCALVES DE LIMA",
+        "residencia":  "FORTALEZA",
+        "instituicao":  "SECRETARIA MUNICIPAL DE SADE DE FORTALEZA",
+        "titulacao":  "Doutorado",
+        "especialidade":  "Medicina de Famlia e Comunidade",
+        "situacao":  "Ativo"
+    },
+    {
+        "id":  53,
+        "nome":  "GEISON VASCONCELOS LIRA",
+        "residencia":  "SOBRAL",
+        "instituicao":  "ESCOLA DE SADE DA FAMLIA VISCONDE DE SABIA",
+        "titulacao":  "Doutorado",
+        "especialidade":  "Acupuntura",
+        "situacao":  "Ativo"
+    },
+    {
+        "id":  54,
+        "nome":  "GEORGE ALEXANDRE TAVARES DE AQUINO",
+        "residencia":  "SOBRAL",
+        "instituicao":  "ESCOLA DE SADE DA FAMLIA VISCONDE DE SABIA",
+        "titulacao":  "Especializao",
+        "especialidade":  "Medicina de Famlia e Comunidade",
+        "situacao":  "Ativo"
+    },
+    {
+        "id":  55,
+        "nome":  "GERVASIO MENDONA COLARES",
+        "residencia":  "FORTALEZA",
+        "instituicao":  "ESCOLA DE SADE PBLICA DO CEAR",
+        "titulacao":  "Residncia Mdica",
+        "especialidade":  "Medicina de Famlia e Comunidade",
+        "situacao":  "Ativo"
+    },
+    {
+        "id":  56,
+        "nome":  "GILSON FERNANDES SOARES",
+        "residencia":  "FORTALEZA",
+        "instituicao":  "ESCOLA DE SADE PBLICA DO CEAR",
+        "titulacao":  "Especializao",
+        "especialidade":  "Medicina de Famlia e Comunidade",
+        "situacao":  "Ativo"
+    },
+    {
+        "id":  57,
+        "nome":  "HASS PEREIRA LEMOS",
+        "residencia":  "FORTALEZA",
+        "instituicao":  "ESCOLA DE SADE PBLICA DO CEAR",
+        "titulacao":  "Mestrado",
+        "especialidade":  "Medicina de Famlia e Comunidade",
+        "situacao":  "Ativo"
+    },
+    {
+        "id":  58,
+        "nome":  "Hiroki Shinkai",
+        "residencia":  "SOBRAL",
+        "instituicao":  "ESCOLA DE SADE DA FAMLIA VISCONDE DE SABIA",
+        "titulacao":  "Mestrado",
+        "especialidade":  "Medicina de Famlia e Comunidade",
+        "situacao":  "Ativo"
+    },
+    {
+        "id":  59,
+        "nome":  "IAN MELO MARTINS",
+        "residencia":  "FORTALEZA",
+        "instituicao":  "SECRETARIA MUNICIPAL DE SADE DE FORTALEZA",
+        "titulacao":  "Residncia Mdica",
+        "especialidade":  "Medicina de Famlia e Comunidade",
+        "situacao":  "Ativo"
+    },
+    {
+        "id":  60,
+        "nome":  "IRIS FLAVIA ARCANJO E CAVALCANTE",
+        "residencia":  "SOBRAL",
+        "instituicao":  "ESCOLA DE SADE DA FAMLIA VISCONDE DE SABIA",
+        "titulacao":  "Residncia Mdica",
+        "especialidade":  "Pediatria",
+        "situacao":  "Ativo"
+    },
+    {
+        "id":  61,
+        "nome":  "IZABELLA TAMIRA GALDINO FARIAS VASCONCELOS",
+        "residencia":  "SOBRAL",
+        "instituicao":  "ESCOLA DE SADE DA FAMLIA VISCONDE DE SABIA",
+        "titulacao":  "Residncia Mdica",
+        "especialidade":  "Pediatria",
+        "situacao":  "Ativo"
+    },
+    {
+        "id":  62,
+        "nome":  "Jaciara Bezerra Marques",
+        "residencia":  "JUAZEIRO DO NORTE",
+        "instituicao":  "UNIVERSIDADE FEDERAL DO CARIRI",
+        "titulacao":  "Mestrado",
+        "especialidade":  "Medicina de Famlia e Comunidade",
+        "situacao":  "Ativo"
+    },
+    {
+        "id":  63,
+        "nome":  "Janaina Rakel Ferreira Gomes de Souza",
+        "residencia":  "JUAZEIRO DO NORTE",
+        "instituicao":  "UNIVERSIDADE FEDERAL DO CARIRI",
+        "titulacao":  "Residncia Mdica",
+        "especialidade":  "Clnica Mdica",
+        "situacao":  "Ativo"
+    },
+    {
+        "id":  64,
+        "nome":  "Jarbas de S Roriz Filho",
+        "residencia":  "FORTALEZA",
+        "instituicao":  "UNIVERSIDADE FEDERAL DO CEAR",
+        "titulacao":  "Doutorado",
+        "especialidade":  "Geriatria",
+        "situacao":  "Ativo"
+    },
+    {
+        "id":  65,
+        "nome":  "JAYANE MOURA RIBEIRO",
+        "residencia":  "FORTALEZA",
+        "instituicao":  "ESCOLA DE SADE PBLICA DO CEAR",
+        "titulacao":  "Residncia Mdica",
+        "especialidade":  "Medicina de Famlia e Comunidade",
+        "situacao":  "Ativo"
+    },
+    {
+        "id":  66,
+        "nome":  "JESSE ALMIR DE OLIVEIRA MAGALHAES",
+        "residencia":  "ITAITINGA",
+        "instituicao":  "ESCOLA DE SADE PBLICA DO CEAR",
+        "titulacao":  "Especializao",
+        "especialidade":  "Medicina de Famlia e Comunidade",
+        "situacao":  "Ativo"
+    },
+    {
+        "id":  67,
+        "nome":  "JOO VICTO FERREIRA ALVES",
+        "residencia":  "CAUCAIA",
+        "instituicao":  "ESCOLA DE SADE PBLICA DO CEAR",
+        "titulacao":  "Residncia Mdica",
+        "especialidade":  "Medicina de Famlia e Comunidade",
+        "situacao":  "Ativo"
+    },
+    {
+        "id":  68,
+        "nome":  "JOCILEIDE SALES CAMPOS",
+        "residencia":  "FORTALEZA",
+        "instituicao":  "SECRETARIA MUNICIPAL DE SADE DE FORTALEZA",
+        "titulacao":  "Doutorado",
+        "especialidade":  "Sade Coletiva",
+        "situacao":  "Ativo"
+    },
+    {
+        "id":  69,
+        "nome":  "Joel Boechat de Morais Junior",
+        "residencia":  "JUAZEIRO DO NORTE",
+        "instituicao":  "UNIVERSIDADE FEDERAL DO CARIRI",
+        "titulacao":  "Residncia Mdica",
+        "especialidade":  "Patologia",
+        "situacao":  "Ativo"
+    },
+    {
+        "id":  70,
+        "nome":  "JORGE LUIS PIRES DE MORAES",
+        "residencia":  "SOBRAL",
+        "instituicao":  "ESCOLA DE SADE DA FAMLIA VISCONDE DE SABIA",
+        "titulacao":  "Graduao",
+        "especialidade":  "",
+        "situacao":  "Ativo"
+    },
+    {
+        "id":  71,
+        "nome":  "Jos Batista Cisne Tomaz",
+        "residencia":  "FORTALEZA",
+        "instituicao":  "UNIVERSIDADE FEDERAL DO CEAR",
+        "titulacao":  "Doutorado",
+        "especialidade":  "Clnica Mdica",
+        "situacao":  "Ativo"
+    },
+    {
+        "id":  72,
+        "nome":  "Jose Fabio Costa Ribeiro Teixeira",
+        "residencia":  "SOBRAL",
+        "instituicao":  "ESCOLA DE SADE DA FAMLIA VISCONDE DE SABIA",
+        "titulacao":  "Especializao",
+        "especialidade":  "Psiquiatria",
+        "situacao":  "Ativo"
+    },
+    {
+        "id":  73,
+        "nome":  "JOS MAURCIO PEREIRA LOPES",
+        "residencia":  "JUAZEIRO DO NORTE",
+        "instituicao":  "UNIVERSIDADE FEDERAL DO CARIRI",
+        "titulacao":  "Residncia Mdica",
+        "especialidade":  "Infectologia",
+        "situacao":  "Ativo"
+    },
+    {
+        "id":  74,
+        "nome":  "Jos Roberto Frota Gomes Capote Jnior",
+        "residencia":  "SOBRAL",
+        "instituicao":  "ESCOLA DE SADE DA FAMLIA VISCONDE DE SABIA",
+        "titulacao":  "Mestrado",
+        "especialidade":  "Endocrinologia e Metabologia",
+        "situacao":  "Ativo"
+    },
+    {
+        "id":  75,
+        "nome":  "JOSE WILSON ANGELIM FILHO",
+        "residencia":  "SOBRAL",
+        "instituicao":  "ESCOLA DE SADE DA FAMLIA VISCONDE DE SABIA",
+        "titulacao":  "Especializao",
+        "especialidade":  "Medicina de Famlia e Comunidade",
+        "situacao":  "Ativo"
+    },
+    {
+        "id":  76,
+        "nome":  "JUCIER GONALVES JNIOR",
+        "residencia":  "CRATO",
+        "instituicao":  "UNIVERSIDADE FEDERAL DO CARIRI",
+        "titulacao":  "Doutorado",
+        "especialidade":  "Reumatologia",
+        "situacao":  "Ativo"
+    },
+    {
+        "id":  77,
+        "nome":  "JUREMA SIQUEIRA DE OLIVEIRA",
+        "residencia":  "SOBRAL",
+        "instituicao":  "ESCOLA DE SADE DA FAMLIA VISCONDE DE SABIA",
+        "titulacao":  "Graduao",
+        "especialidade":  "No possui",
+        "situacao":  "Ativo"
+    },
+    {
+        "id":  78,
+        "nome":  "Kelly Leite Maia de Messias",
+        "residencia":  "FORTALEZA",
+        "instituicao":  "ESCOLA DE SADE PBLICA DO CEAR",
+        "titulacao":  "Doutorado",
+        "especialidade":  "Medicina Preventiva e Social",
+        "situacao":  "Ativo"
+    },
+    {
+        "id":  79,
+        "nome":  "LEANDRO IGOR FERREIRA MAIA",
+        "residencia":  "FORTALEZA",
+        "instituicao":  "ESCOLA DE SADE PBLICA DO CEAR",
+        "titulacao":  "Residncia Mdica",
+        "especialidade":  "Medicina de Famlia e Comunidade",
+        "situacao":  "Ativo"
+    },
+    {
+        "id":  80,
+        "nome":  "LISANDRA SERRA DAMASCENO",
+        "residencia":  "FORTALEZA",
+        "instituicao":  "UNIVERSIDADE FEDERAL DO CEAR",
+        "titulacao":  "Doutorado",
+        "especialidade":  "Infectologia",
+        "situacao":  "Ativo"
+    },
+    {
+        "id":  81,
+        "nome":  "LIVIO GOMES DA SILVEIRA",
+        "residencia":  "FORTALEZA",
+        "instituicao":  "ESCOLA DE SADE PBLICA DO CEAR",
+        "titulacao":  "Especializao",
+        "especialidade":  "Medicina de Famlia e Comunidade",
+        "situacao":  "Ativo"
+    },
+    {
+        "id":  82,
+        "nome":  "LOURRANY BORGES COSTA",
+        "residencia":  "FORTALEZA",
+        "instituicao":  "UNIVERSIDADE FEDERAL DO CEAR",
+        "titulacao":  "Doutorado",
+        "especialidade":  "Medicina de Famlia e Comunidade",
+        "situacao":  "Ativo"
+    },
+    {
+        "id":  83,
+        "nome":  "LUANA APARECIDA JORGE CAMPOS DE MORAES",
+        "residencia":  "FORTALEZA",
+        "instituicao":  "UNIVERSIDADE FEDERAL DO CEAR",
+        "titulacao":  "Especializao",
+        "especialidade":  "Medicina de Famlia e Comunidade",
+        "situacao":  "Ativo"
+    },
+    {
+        "id":  84,
+        "nome":  "LUCAS ELIEL BESERRA MOURA",
+        "residencia":  "FORTALEZA",
+        "instituicao":  "SECRETARIA MUNICIPAL DE SADE DE FORTALEZA",
+        "titulacao":  "Residncia Mdica",
+        "especialidade":  "Medicina de Famlia e Comunidade",
+        "situacao":  "Ativo"
+    },
+    {
+        "id":  85,
+        "nome":  "Luciana Passos Arago",
+        "residencia":  "FORTALEZA",
+        "instituicao":  "SECRETARIA MUNICIPAL DE SADE DE FORTALEZA",
+        "titulacao":  "Mestrado",
+        "especialidade":  "Medicina de Famlia e Comunidade",
+        "situacao":  "Ativo"
+    },
+    {
+        "id":  86,
+        "nome":  "luiz guilherme pinheiro costa",
+        "residencia":  "FORTALEZA",
+        "instituicao":  "UNIVERSIDADE DA INTEGRAO INTERNACIONAL DA LUSOFONIA AFRO-BRASILEIRA",
+        "titulacao":  "Residncia Mdica",
+        "especialidade":  "Medicina de Famlia e Comunidade",
+        "situacao":  "Ativo"
+    },
+    {
+        "id":  87,
+        "nome":  "MANUELA FABRCIO DE OLIVEIRA CUNHA",
+        "residencia":  "FORTALEZA",
+        "instituicao":  "ESCOLA DE SADE PBLICA DO CEAR",
+        "titulacao":  "Residncia Mdica",
+        "especialidade":  "Medicina de Famlia e Comunidade",
+        "situacao":  "Ativo"
+    },
+    {
+        "id":  88,
+        "nome":  "MARCELO ALEXANDRE CARVALHO",
+        "residencia":  "FORTALEZA",
+        "instituicao":  "ESCOLA DE SADE PBLICA DO CEAR",
+        "titulacao":  "Mestrado",
+        "especialidade":  "Otorrinolaringologia",
+        "situacao":  "Ativo"
+    },
+    {
+        "id":  89,
+        "nome":  "MARCELO BITU DE ALMEIDA",
+        "residencia":  "SOBRAL",
+        "instituicao":  "ESCOLA DE SADE DA FAMLIA VISCONDE DE SABIA",
+        "titulacao":  "Mestrado",
+        "especialidade":  "Sade Coletiva",
+        "situacao":  "Ativo"
+    },
+    {
+        "id":  90,
+        "nome":  "Marcelo Cruz Oliveira",
+        "residencia":  "JUAZEIRO DO NORTE",
+        "instituicao":  "UNIVERSIDADE FEDERAL DO CARIRI",
+        "titulacao":  "Especializao",
+        "especialidade":  "Cardiologia",
+        "situacao":  "Ativo"
+    },
+    {
+        "id":  91,
+        "nome":  "MARCELO VINICIUS ALMEIDA DO CARMO",
+        "residencia":  "SOBRAL",
+        "instituicao":  "ESCOLA DE SADE DA FAMLIA VISCONDE DE SABIA",
+        "titulacao":  "Graduao",
+        "especialidade":  "No possui",
+        "situacao":  "Ativo"
+    },
+    {
+        "id":  92,
+        "nome":  "MARCOS FABIO DOS SANTOS PINHEIRO",
+        "residencia":  "FORTALEZA",
+        "instituicao":  "SECRETARIA MUNICIPAL DE SADE DE FORTALEZA",
+        "titulacao":  "Especializao",
+        "especialidade":  "Medicina de Famlia e Comunidade",
+        "situacao":  "Ativo"
+    },
+    {
+        "id":  93,
+        "nome":  "marcos tadeu ellery frota",
+        "residencia":  "FORTALEZA",
+        "instituicao":  "SECRETARIA MUNICIPAL DE SADE DE FORTALEZA",
+        "titulacao":  "Residncia Mdica",
+        "especialidade":  "Medicina de Famlia e Comunidade",
+        "situacao":  "Ativo"
+    },
+    {
+        "id":  94,
+        "nome":  "Maria Auxiliadora Ferreira Brito",
+        "residencia":  "CRATO",
+        "instituicao":  "UNIVERSIDADE FEDERAL DO CARIRI",
+        "titulacao":  "Mestrado",
+        "especialidade":  "Pediatria",
+        "situacao":  "Ativo"
+    },
+    {
+        "id":  95,
+        "nome":  "MARILIA MAGALHAES TAHIM MARINHO",
+        "residencia":  "FORTALEZA",
+        "instituicao":  "ESCOLA DE SADE PBLICA DO CEAR",
+        "titulacao":  "Especializao",
+        "especialidade":  "Medicina de Famlia e Comunidade",
+        "situacao":  "Ativo"
+    },
+    {
+        "id":  96,
+        "nome":  "Mrio Luis Timb Farias",
+        "residencia":  "SOBRAL",
+        "instituicao":  "ESCOLA DE SADE DA FAMLIA VISCONDE DE SABIA",
+        "titulacao":  "Especializao",
+        "especialidade":  "Dermatologia",
+        "situacao":  "Ativo"
+    },
+    {
+        "id":  97,
+        "nome":  "MIKAELLE LOPES RODRIGUES",
+        "residencia":  "SOBRAL",
+        "instituicao":  "ESCOLA DE SADE DA FAMLIA VISCONDE DE SABIA",
+        "titulacao":  "Especializao",
+        "especialidade":  "Medicina de Famlia e Comunidade",
+        "situacao":  "Ativo"
+    },
+    {
+        "id":  98,
+        "nome":  "Moacir Pereira Leite Neto",
+        "residencia":  "CRATO",
+        "instituicao":  "UNIVERSIDADE FEDERAL DO CARIRI",
+        "titulacao":  "Residncia Mdica",
+        "especialidade":  "Neurologia",
+        "situacao":  "Ativo"
+    },
+    {
+        "id":  99,
+        "nome":  "MORGANA PORDEUS DO NASCIMENTO FORTE",
+        "residencia":  "FORTALEZA",
+        "instituicao":  "ESCOLA DE SADE PBLICA DO CEAR",
+        "titulacao":  "Mestrado",
+        "especialidade":  "Medicina de Famlia e Comunidade",
+        "situacao":  "Ativo"
+    },
+    {
+        "id":  100,
+        "nome":  "NATLIA REIS DE CARVALHO",
+        "residencia":  "JIJOCA DE JERICOACOARA",
+        "instituicao":  "UNIVERSIDADE DA INTEGRAO INTERNACIONAL DA LUSOFONIA AFRO-BRASILEIRA",
+        "titulacao":  "Mestrado",
+        "especialidade":  "Medicina de Famlia e Comunidade",
+        "situacao":  "Ativo"
+    },
+    {
+        "id":  101,
+        "nome":  "NLCIO SOUZA SOARES SEGUNDO",
+        "residencia":  "FORTALEZA",
+        "instituicao":  "UNIVERSIDADE FEDERAL DO CEAR",
+        "titulacao":  "Residncia Mdica",
+        "especialidade":  "Medicina de Famlia e Comunidade",
+        "situacao":  "Ativo"
+    },
+    {
+        "id":  102,
+        "nome":  "OTAVIO CRUZ SAMPAIO NETO",
+        "residencia":  "JUAZEIRO DO NORTE",
+        "instituicao":  "UNIVERSIDADE FEDERAL DO CARIRI",
+        "titulacao":  "Especializao",
+        "especialidade":  "Medicina de Famlia e Comunidade",
+        "situacao":  "Ativo"
+    },
+    {
+        "id":  103,
+        "nome":  "Pablo Arajo Alves",
+        "residencia":  "CAUCAIA",
+        "instituicao":  "ESCOLA DE SADE PBLICA DO CEAR",
+        "titulacao":  "Mestrado",
+        "especialidade":  "Medicina de Famlia e Comunidade",
+        "situacao":  "Ativo"
+    },
+    {
+        "id":  104,
+        "nome":  "Patricia Maria de Albuquerque Brayner",
+        "residencia":  "BARBALHA",
+        "instituicao":  "UNIVERSIDADE FEDERAL DO CARIRI",
+        "titulacao":  "Residncia Mdica",
+        "especialidade":  "Ginecologia e Obstetrcia",
+        "situacao":  "Ativo"
+    },
+    {
+        "id":  105,
+        "nome":  "PATRICIA ROSANE LEITE DE FIGUEIREDO",
+        "residencia":  "BARBALHA",
+        "instituicao":  "UNIVERSIDADE FEDERAL DO CARIRI",
+        "titulacao":  "Mestrado",
+        "especialidade":  "Endocrinologia e Metabologia",
+        "situacao":  "Ativo"
+    },
+    {
+        "id":  106,
+        "nome":  "Patrcia Symone Almeida Ivo",
+        "residencia":  "FORTALEZA",
+        "instituicao":  "ESCOLA DE SADE PBLICA DO CEAR",
+        "titulacao":  "Mestrado",
+        "especialidade":  "Medicina de Famlia e Comunidade",
+        "situacao":  "Ativo"
+    },
+    {
+        "id":  107,
+        "nome":  "PAULO FILHO SOARES MARCELINO",
+        "residencia":  "FORTALEZA",
+        "instituicao":  "UNIVERSIDADE DA INTEGRAO INTERNACIONAL DA LUSOFONIA AFRO-BRASILEIRA",
+        "titulacao":  "Residncia Mdica",
+        "especialidade":  "Neurologia",
+        "situacao":  "Ativo"
+    },
+    {
+        "id":  108,
+        "nome":  "Paulo Svio Fontenele Magalhes",
+        "residencia":  "FORTALEZA",
+        "instituicao":  "SECRETARIA MUNICIPAL DE SADE DE FORTALEZA",
+        "titulacao":  "Doutorado",
+        "especialidade":  "Medicina de Famlia e Comunidade",
+        "situacao":  "Ativo"
+    },
+    {
+        "id":  109,
+        "nome":  "PEDRO GOMES CAVALCANTE NETO",
+        "residencia":  "SOBRAL",
+        "instituicao":  "ESCOLA DE SADE DA FAMLIA VISCONDE DE SABIA",
+        "titulacao":  "Mestrado",
+        "especialidade":  "Medicina de Famlia e Comunidade",
+        "situacao":  "Ativo"
+    },
+    {
+        "id":  110,
+        "nome":  "RAFAELA YASMINE DE SOUSA FERREIRA",
+        "residencia":  "FORTALEZA",
+        "instituicao":  "ESCOLA DE SADE PBLICA DO CEAR",
+        "titulacao":  "Graduao",
+        "especialidade":  "",
+        "situacao":  "Ativo"
+    },
+    {
+        "id":  111,
+        "nome":  "Rafael Nobre Lopes",
+        "residencia":  "SOBRAL",
+        "instituicao":  "ESCOLA DE SADE DA FAMLIA VISCONDE DE SABIA",
+        "titulacao":  "Residncia Mdica",
+        "especialidade":  "Psiquiatria",
+        "situacao":  "Ativo"
+    },
+    {
+        "id":  112,
+        "nome":  "RAINARDO ANTONIO PUSTER",
+        "residencia":  "FORTALEZA",
+        "instituicao":  "UNIVERSIDADE FEDERAL DO CEAR",
+        "titulacao":  "Residncia Mdica",
+        "especialidade":  "Clnica Mdica",
+        "situacao":  "Ativo"
+    },
+    {
+        "id":  113,
+        "nome":  "RAMON VERAS PARENTE",
+        "residencia":  "FORTALEZA",
+        "instituicao":  "ESCOLA DE SADE PBLICA DO CEAR",
+        "titulacao":  "Especializao",
+        "especialidade":  "Pediatria",
+        "situacao":  "Ativo"
+    },
+    {
+        "id":  114,
+        "nome":  "RAULYNSSON MACEDO DE OLIVEIRA",
+        "residencia":  "SOBRAL",
+        "instituicao":  "ESCOLA DE SADE DA FAMLIA VISCONDE DE SABIA",
+        "titulacao":  "Graduao",
+        "especialidade":  "Clnica Mdica",
+        "situacao":  "Ativo"
+    },
+    {
+        "id":  115,
+        "nome":  "REBECA COSTA CASTELO BRANCO",
+        "residencia":  "FORTALEZA",
+        "instituicao":  "UNIVERSIDADE FEDERAL DO CEAR",
+        "titulacao":  "Doutorado",
+        "especialidade":  "Pediatria",
+        "situacao":  "Ativo"
+    },
+    {
+        "id":  116,
+        "nome":  "RENATA FREITAS LEMOS DE OLIVEIRA",
+        "residencia":  "SOBRAL",
+        "instituicao":  "ESCOLA DE SADE DA FAMLIA VISCONDE DE SABIA",
+        "titulacao":  "Mestrado",
+        "especialidade":  "Pediatria",
+        "situacao":  "Ativo"
+    },
+    {
+        "id":  117,
+        "nome":  "Ricarla Maria Oliveira Brito do Bomfim",
+        "residencia":  "SOBRAL",
+        "instituicao":  "ESCOLA DE SADE DA FAMLIA VISCONDE DE SABIA",
+        "titulacao":  "Mestrado",
+        "especialidade":  "Medicina de Famlia e Comunidade",
+        "situacao":  "Ativo"
+    },
+    {
+        "id":  118,
+        "nome":  "ROBERTINA PINHEIRO ROBERTO",
+        "residencia":  "JUAZEIRO DO NORTE",
+        "instituicao":  "UNIVERSIDADE FEDERAL DO CARIRI",
+        "titulacao":  "Residncia Mdica",
+        "especialidade":  "Pneumologia",
+        "situacao":  "Ativo"
+    },
+    {
+        "id":  119,
+        "nome":  "ROBERTO RIBEIRO MARANHO",
+        "residencia":  "AQUIRAZ",
+        "instituicao":  "ESCOLA DE SADE PBLICA DO CEAR",
+        "titulacao":  "Mestrado",
+        "especialidade":  "Medicina de Famlia e Comunidade",
+        "situacao":  "Ativo"
+    },
+    {
+        "id":  120,
+        "nome":  "ROGRIO PINTO GIESTA",
+        "residencia":  "EUSEBIO",
+        "instituicao":  "UNIVERSIDADE FEDERAL DO CEAR",
+        "titulacao":  "Doutorado",
+        "especialidade":  "Clnica Mdica",
+        "situacao":  "Ativo"
+    },
+    {
+        "id":  121,
+        "nome":  "Rui de Gouveia Soares Neto",
+        "residencia":  "FORTALEZA",
+        "instituicao":  "SECRETARIA MUNICIPAL DE SADE DE FORTALEZA",
+        "titulacao":  "Residncia Mdica",
+        "especialidade":  "Medicina de Famlia e Comunidade",
+        "situacao":  "Ativo"
+    },
+    {
+        "id":  122,
+        "nome":  "SAFIRA GOMES PORTELLA",
+        "residencia":  "SOBRAL",
+        "instituicao":  "ESCOLA DE SADE DA FAMLIA VISCONDE DE SABIA",
+        "titulacao":  "Graduao",
+        "especialidade":  "",
+        "situacao":  "Ativo"
+    },
+    {
+        "id":  123,
+        "nome":  "SAMUEL CARVALHO GUIMARAES",
+        "residencia":  "FORTALEZA",
+        "instituicao":  "SECRETARIA MUNICIPAL DE SADE DE FORTALEZA",
+        "titulacao":  "Mestrado",
+        "especialidade":  "Medicina de Famlia e Comunidade",
+        "situacao":  "Ativo"
+    },
+    {
+        "id":  124,
+        "nome":  "SILVANA MARIA DE SOUSA ALVES GOMES",
+        "residencia":  "SOBRAL",
+        "instituicao":  "ESCOLA DE SADE DA FAMLIA VISCONDE DE SABIA",
+        "titulacao":  "Residncia Mdica",
+        "especialidade":  "Pediatria",
+        "situacao":  "Ativo"
+    },
+    {
+        "id":  125,
+        "nome":  "Slvio Paulo da Costa Arajo Rocha Furtado",
+        "residencia":  "FORTALEZA",
+        "instituicao":  "UNIVERSIDADE FEDERAL DO CEAR",
+        "titulacao":  "Residncia Mdica",
+        "especialidade":  "Hematologia e Hemoterapia",
+        "situacao":  "Ativo"
+    },
+    {
+        "id":  126,
+        "nome":  "SIONARA MELO FIGUEIREDO DE CARVALHO",
+        "residencia":  "BARBALHA",
+        "instituicao":  "UNIVERSIDADE FEDERAL DO CARIRI",
+        "titulacao":  "Doutorado",
+        "especialidade":  "Radioterapia",
+        "situacao":  "Ativo"
+    },
+    {
+        "id":  127,
+        "nome":  "SYLVIA CHRISTINE PINTO MARTINS",
+        "residencia":  "FORTALEZA",
+        "instituicao":  "ESCOLA DE SADE PBLICA DO CEAR",
+        "titulacao":  "Residncia Mdica",
+        "especialidade":  "Medicina de Famlia e Comunidade",
+        "situacao":  "Ativo"
+    },
+    {
+        "id":  128,
+        "nome":  "TALES COELHO SAMPAIO",
+        "residencia":  "FORTALEZA",
+        "instituicao":  "SECRETARIA MUNICIPAL DE SADE DE FORTALEZA",
+        "titulacao":  "Mestrado",
+        "especialidade":  "Medicina de Famlia e Comunidade",
+        "situacao":  "Ativo"
+    },
+    {
+        "id":  129,
+        "nome":  "TALITA CARNEIRO DE CARVALHO",
+        "residencia":  "FORTALEZA",
+        "instituicao":  "ESCOLA DE SADE DA FAMLIA VISCONDE DE SABIA",
+        "titulacao":  "Mestrado",
+        "especialidade":  "Medicina de Famlia e Comunidade",
+        "situacao":  "Ativo"
+    },
+    {
+        "id":  130,
+        "nome":  "Tatiana Monteiro Fiuza",
+        "residencia":  "FORTALEZA",
+        "instituicao":  "ESCOLA DE SADE PBLICA DO CEAR",
+        "titulacao":  "Doutorado",
+        "especialidade":  "Medicina de Famlia e Comunidade",
+        "situacao":  "Ativo"
+    },
+    {
+        "id":  131,
+        "nome":  "Terezinha do Menino Jesus Silva Leito",
+        "residencia":  "FORTALEZA",
+        "instituicao":  "UNIVERSIDADE DA INTEGRAO INTERNACIONAL DA LUSOFONIA AFRO-BRASILEIRA",
+        "titulacao":  "Doutorado",
+        "especialidade":  "Infectologia",
+        "situacao":  "Ativo"
+    },
+    {
+        "id":  132,
+        "nome":  "Valderlan Fechine Jamacaru",
+        "residencia":  "FORTALEZA",
+        "instituicao":  "UNIVERSIDADE DA INTEGRAO INTERNACIONAL DA LUSOFONIA AFRO-BRASILEIRA",
+        "titulacao":  "Residncia Mdica",
+        "especialidade":  "Patologia",
+        "situacao":  "Ativo"
+    },
+    {
+        "id":  133,
+        "nome":  "Valdo Alencar Rolim Filho",
+        "residencia":  "SOBRAL",
+        "instituicao":  "ESCOLA DE SADE DA FAMLIA VISCONDE DE SABIA",
+        "titulacao":  "Especializao",
+        "especialidade":  "Medicina de Famlia e Comunidade",
+        "situacao":  "Ativo"
+    },
+    {
+        "id":  134,
+        "nome":  "VANESSA MONT ALVERNE ANGELIM MONTEIRO",
+        "residencia":  "SOBRAL",
+        "instituicao":  "ESCOLA DE SADE DA FAMLIA VISCONDE DE SABIA",
+        "titulacao":  "Especializao",
+        "especialidade":  "Medicina de Famlia e Comunidade",
+        "situacao":  "Ativo"
+    },
+    {
+        "id":  135,
+        "nome":  "Vasco Frota Moura Ferreira",
+        "residencia":  "SOBRAL",
+        "instituicao":  "ESCOLA DE SADE DA FAMLIA VISCONDE DE SABIA",
+        "titulacao":  "Residncia Mdica",
+        "especialidade":  "Pediatria",
+        "situacao":  "Ativo"
+    },
+    {
+        "id":  136,
+        "nome":  "Vera Lcia de Azevedo Dantas",
+        "residencia":  "FORTALEZA",
+        "instituicao":  "SECRETARIA MUNICIPAL DE SADE DE FORTALEZA",
+        "titulacao":  "Doutorado",
+        "especialidade":  "Sade Coletiva",
+        "situacao":  "Ativo"
+    },
+    {
+        "id":  137,
+        "nome":  "Virginia Oliveira Fernandes",
+        "residencia":  "FORTALEZA",
+        "instituicao":  "UNIVERSIDADE FEDERAL DO CEAR",
+        "titulacao":  "Doutorado",
+        "especialidade":  "Endocrinologia e Metabologia",
+        "situacao":  "Ativo"
+    },
+    {
+        "id":  138,
+        "nome":  "VIVIANE CHAVES PEREIRA",
+        "residencia":  "JUAZEIRO DO NORTE",
+        "instituicao":  "UNIVERSIDADE FEDERAL DO CARIRI",
+        "titulacao":  "Residncia Mdica",
+        "especialidade":  "Hematologia e Hemoterapia",
+        "situacao":  "Ativo"
+    },
+    {
+        "id":  139,
+        "nome":  "Zeus Peron Barbosa do Nascimento",
+        "residencia":  "FORTALEZA",
+        "instituicao":  "UNIVERSIDADE FEDERAL DO CEAR",
+        "titulacao":  "Mestrado",
+        "especialidade":  "Ginecologia e Obstetrcia",
+        "situacao":  "Ativo"
     }
 ]
