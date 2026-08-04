@@ -4,62 +4,56 @@ window.AppState = {
   data: {}
 };
 
-// Limpa dados antigos do localStorage para garantir que os dados frescos do servidor sejam usados
+// Limpa dados antigos do localStorage (exceto users e senhas alteradas)
 ['medicos', 'supervisores', 'secretarios', 'referencias', 'instituicoes', 'processos', 'tutores'].forEach(k => localStorage.removeItem('pmmb_' + k));
 
 async function loadData() {
   const files = ['medicos', 'supervisores', 'secretarios', 'referencias', 'instituicoes', 'processos', 'tutores'];
   for (const file of files) {
     try {
-      // Adicionado um timestamp (v=Date.now()) para evitar que o navegador guarde em cache
       const resp = await fetch('data/' + file + '.json?v=' + Date.now());
       if (resp.ok) {
-         AppState.data[file] = await resp.json();
+         window.AppState.data[file] = await resp.json();
       } else {
-         AppState.data[file] = [];
+         window.AppState.data[file] = [];
       }
     } catch(e) {
       console.error("Erro ao carregar " + file, e);
-      AppState.data[file] = [];
+      window.AppState.data[file] = [];
     }
   }
 }
 
 function saveData(key) {
-  localStorage.setItem('pmmb_' + key, JSON.stringify(AppState.data[key]));
+  localStorage.setItem('pmmb_' + key, JSON.stringify(window.AppState.data[key]));
 }
 
 function navigateToTab(tabName) {
-  // Update sub-nav active state
   document.querySelectorAll('.sub-nav-item').forEach(item => {
     item.classList.toggle('active', item.dataset.tab === tabName);
   });
-  // Hide all tab-content, show the target
   document.querySelectorAll('.tab-content').forEach(tc => tc.classList.remove('active'));
   const target = document.getElementById('tab-' + tabName);
   if (target) {
     target.classList.add('active');
-    // Render if not yet rendered
     if (!target.dataset.rendered && window.TabModules && window.TabModules[tabName]) {
       window.TabModules[tabName].render(target);
       target.dataset.rendered = 'true';
     }
   }
-  AppState.currentTab = tabName;
+  window.AppState.currentTab = tabName;
 }
 
 function navigateToPage(pageName) {
-  // Show/hide main-content vs relatorios-page
   const mainContent = document.getElementById('main-content');
   if (mainContent) mainContent.style.display = pageName === 'visao-geral' ? '' : 'none';
   
   const relatorios = document.getElementById('relatorios-page');
   if (relatorios) relatorios.style.display = pageName === 'relatorios' ? '' : 'none';
   
-  // Update navbar active state
   document.querySelectorAll('.nav-link').forEach(l => l.classList.toggle('active', l.dataset.page === pageName));
   
-  AppState.currentPage = pageName;
+  window.AppState.currentPage = pageName;
   
   if (pageName === 'relatorios') {
     const container = document.getElementById('tab-relatorios');
@@ -72,6 +66,23 @@ function navigateToPage(pageName) {
 
 async function initApp() {
   await loadData();
+  
+  // Atualiza avatar com iniciais do usuÃ¡rio logado
+  const user = window.Auth.getCurrentUser();
+  if (user && user.name) {
+    const avatar = document.querySelector('.avatar');
+    if (avatar) {
+      const initials = user.name.split(' ').map(n => n[0]).join('').substring(0, 2).toUpperCase();
+      avatar.textContent = initials;
+      avatar.title = user.name + ' (' + user.email + ')';
+      avatar.style.cursor = 'pointer';
+      avatar.addEventListener('click', () => {
+        if (confirm('Deseja sair da sua conta?')) {
+          window.Auth.logout();
+        }
+      });
+    }
+  }
   
   // Sub-nav tab clicks
   document.querySelectorAll('.sub-nav-item').forEach(item => {
@@ -103,4 +114,12 @@ async function initApp() {
   navigateToTab('painel');
 }
 
-document.addEventListener('DOMContentLoaded', initApp);
+// ==================== BOOT ====================
+// Verifica autenticaÃ§Ã£o antes de iniciar o app
+document.addEventListener('DOMContentLoaded', () => {
+  if (window.Auth && window.Auth.isLoggedIn()) {
+    initApp();
+  } else {
+    renderLoginScreen();
+  }
+});
