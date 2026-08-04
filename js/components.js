@@ -149,18 +149,30 @@ function showModal(config) {
     wrapper.innerHTML = `<label>${field.label}</label><input type="${field.type || 'text'}" name="${field.key}" ${field.required ? 'required' : ''} />`;
     form.appendChild(wrapper);
   });
+  form.addEventListener('submit', (e) => e.preventDefault());
   body.appendChild(form);
   
   footer.innerHTML = `
-    <button class="btn btn-secondary" id="btn-modal-cancel">Cancelar</button>
-    <button class="btn btn-primary" id="btn-modal-save">Salvar</button>
+    <button type="button" class="btn btn-secondary" id="btn-modal-cancel">Cancelar</button>
+    <button type="button" class="btn btn-primary" id="btn-modal-save">Salvar</button>
   `;
   
   document.getElementById('btn-modal-cancel').addEventListener('click', hideModal);
-  document.getElementById('btn-modal-save').addEventListener('click', () => {
+  document.getElementById('btn-modal-save').addEventListener('click', async () => {
+    if (!form.checkValidity()) {
+      form.reportValidity();
+      return;
+    }
     const formData = new FormData(form);
     const data = Object.fromEntries(formData.entries());
-    if (config.onSave) config.onSave(data);
+    const saveBtn = document.getElementById('btn-modal-save');
+    if (saveBtn) {
+      saveBtn.disabled = true;
+      saveBtn.textContent = 'Salvando...';
+    }
+    if (config.onSave) {
+      await config.onSave(data);
+    }
     hideModal();
   });
   
