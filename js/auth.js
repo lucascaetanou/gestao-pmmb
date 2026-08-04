@@ -161,8 +161,8 @@ window.Auth = (function() {
     }
 
     saveUsersLocal(users);
-    await pushUsersToGitHub(users);
-    return true;
+    const pushed = await pushUsersToGitHub(users);
+    return pushed;
   }
 
   function isLoggedIn() {
