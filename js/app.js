@@ -7,16 +7,17 @@ const AppState = {
 async function loadData() {
   const files = ['medicos', 'supervisores', 'secretarios', 'referencias', 'instituicoes', 'processos', 'tutores'];
   for (const file of files) {
-    const stored = localStorage.getItem('pmmb_' + file);
-    if (stored) {
-      AppState.data[file] = JSON.parse(stored);
-    } else {
-      try {
-        const resp = await fetch('data/' + file + '.json');
-        AppState.data[file] = await resp.json();
-      } catch(e) {
-        AppState.data[file] = [];
+    try {
+      // Adicionado um timestamp (v=Date.now()) para evitar que o navegador guarde em cache
+      const resp = await fetch('data/' + file + '.json?v=' + Date.now());
+      if (resp.ok) {
+         AppState.data[file] = await resp.json();
+      } else {
+         AppState.data[file] = [];
       }
+    } catch(e) {
+      console.error("Erro ao carregar " + file, e);
+      AppState.data[file] = [];
     }
   }
 }
