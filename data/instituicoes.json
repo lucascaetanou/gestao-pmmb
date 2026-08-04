@@ -1,0 +1,32 @@
+﻿[
+    {
+        "id":  1,
+        "sigla":  "ESFVS",
+        "num_cidades":  5,
+        "cidades":  [
+                        "Sobral",
+                        "Meruoca",
+                        "Massape",
+                        "Alcantaras",
+                        "Santana"
+                    ],
+        "uf":  "CE",
+        "nome":  "ESCOLA DE SAUDE DA FAMILIA VISCONDE DE SABOIA",
+        "num_supervisores":  40
+    },
+    {
+        "id":  2,
+        "sigla":  "ESP-CE",
+        "num_cidades":  8,
+        "cidades":  [
+                        "Fortaleza",
+                        "Caucaia",
+                        "Maracanau",
+                        "Eusebio",
+                        "Aquiraz"
+                    ],
+        "uf":  "CE",
+        "nome":  "ESCOLA DE SAUDE PUBLICA DO CEARA",
+        "num_supervisores":  30
+    }
+]

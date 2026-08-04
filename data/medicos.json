@@ -1,0 +1,98 @@
+﻿[
+    {
+        "tipo":  "INTERCAMBISTA MAIS MEDICOS",
+        "id":  1,
+        "contato_email":  "leal19cuba@gmail.com",
+        "cpf":  "081.008.061-46",
+        "contato_telefone":  "(85) 96795-8866",
+        "regional":  "TRIGESIMO QUINTO",
+        "inicio":  "2023-12-14",
+        "municipio":  "MARACANAU",
+        "vulnerabilidade":  "Media Vulnerabilidade",
+        "nome":  "VORDANIA LEAL BAREA"
+    },
+    {
+        "tipo":  "INTERCAMBISTA MAIS MEDICOS",
+        "id":  2,
+        "contato_email":  "dasniertpupo@gmail.com",
+        "cpf":  "002.169.631-90",
+        "contato_telefone":  "(85) 99279-8721",
+        "regional":  "TRIGESIMO QUINTO",
+        "inicio":  "2023-12-11",
+        "municipio":  "FORTALEZA",
+        "vulnerabilidade":  "Media Vulnerabilidade",
+        "nome":  "DASNIER TAMAYO PUPO"
+    },
+    {
+        "tipo":  "INTERCAMBISTA MAIS MEDICOS",
+        "id":  3,
+        "contato_email":  "yida0601@gmail.com",
+        "cpf":  "081.659.631-80",
+        "contato_telefone":  "(85) 99940-9078",
+        "regional":  "TRIGESIMO QUINTO",
+        "inicio":  "2023-12-11",
+        "municipio":  "DISTRITO SANITARIO ESPECIAL INDIGENA CEARA",
+        "vulnerabilidade":  "Media Vulnerabilidade",
+        "nome":  "YADIRA RODRIGUEZ LEZCANO"
+    },
+    {
+        "tipo":  "INTERCAMBISTA MAIS MEDICOS",
+        "id":  4,
+        "contato_email":  "izquierdocastrodaidelba@gmail.com",
+        "cpf":  "087.548.981-08",
+        "contato_telefone":  "(85) 99764-7808",
+        "regional":  "TRIGESIMO QUINTO",
+        "inicio":  "2023-12-13",
+        "municipio":  "FORTIM",
+        "vulnerabilidade":  "Alta Vulnerabilidade",
+        "nome":  "IDELBA ROSA IZQUIERDO ESTRADA"
+    },
+    {
+        "tipo":  "INTERCAMBISTA MAIS MEDICOS",
+        "id":  5,
+        "contato_email":  "maricelavinals@gmail.com",
+        "cpf":  "084.187.861-75",
+        "contato_telefone":  "(85) 99246-2020",
+        "regional":  "TRIGESIMO QUINTO",
+        "inicio":  "2025-04-16",
+        "municipio":  "FORTALEZA",
+        "vulnerabilidade":  "Media Vulnerabilidade",
+        "nome":  "MARICELA VINALS CARDOZA"
+    },
+    {
+        "tipo":  "INTERCAMBISTA MAIS MEDICOS",
+        "id":  6,
+        "contato_email":  "yadiraveraleyva@gmail.com",
+        "cpf":  "081.004.531-10",
+        "contato_telefone":  "(85) 98162-4755",
+        "regional":  "TRIGESIMO QUINTO",
+        "inicio":  "2023-12-20",
+        "municipio":  "FORTALEZA",
+        "vulnerabilidade":  "Media Vulnerabilidade",
+        "nome":  "YADIRA VERA LEYVA"
+    },
+    {
+        "tipo":  "INTERCAMBISTA MAIS MEDICOS",
+        "id":  7,
+        "contato_email":  "yunielreynaldo13@gmail.com",
+        "cpf":  "081.106.021-89",
+        "contato_telefone":  "(85) 99562-1194",
+        "regional":  "TRIGESIMO QUINTO",
+        "inicio":  "2025-07-28",
+        "municipio":  "LIMOEIRO DO NORTE",
+        "vulnerabilidade":  "Media Vulnerabilidade",
+        "nome":  "YUNIEL REYNALDO GONZALEZ"
+    },
+    {
+        "tipo":  "INTERCAMBISTA MAIS MEDICOS",
+        "id":  8,
+        "contato_email":  "cvalero1965@gmail.com",
+        "cpf":  "067.785.351-30",
+        "contato_telefone":  "(85) 99974-0454",
+        "regional":  "QUADRAGÃ‰SIMO PRIMEIRO",
+        "inicio":  "2025-09-02",
+        "municipio":  "IPU",
+        "vulnerabilidade":  "Alta Vulnerabilidade",
+        "nome":  "CARLOS ALBERTO VALERO RONDON"
+    }
+]

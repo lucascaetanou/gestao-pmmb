@@ -1,0 +1,38 @@
+﻿[
+    {
+        "id":  1,
+        "instituicao":  "ESCOLA DE SAUDE PUBLICA DO CEARA",
+        "situacao":  "Ativo",
+        "titulacao":  "Mestrado",
+        "nome":  "ROBERTO RIBEIRO MARANHAO",
+        "especialidade":  "Medicina de Familia e Comunidade",
+        "residencia":  "AQUIRAZ"
+    },
+    {
+        "id":  2,
+        "instituicao":  "UNIVERSIDADE FEDERAL DO CEARA",
+        "situacao":  "Ativo",
+        "titulacao":  "Residencia Medica",
+        "nome":  "Silvio Paulo da Costa Araujo Rocha Furtado",
+        "especialidade":  "Hematologia e Hemoterapia",
+        "residencia":  "FORTALEZA"
+    },
+    {
+        "id":  3,
+        "instituicao":  "ESCOLA DE SAUDE PUBLICA DO CEARA",
+        "situacao":  "Ativo",
+        "titulacao":  "Doutorado",
+        "nome":  "Tatiana Monteiro Fiuza",
+        "especialidade":  "Medicina de Familia e Comunidade",
+        "residencia":  "FORTALEZA"
+    },
+    {
+        "id":  4,
+        "instituicao":  "SECRETARIA MUNICIPAL DE SAUDE DE FORTALEZA",
+        "situacao":  "Ativo",
+        "titulacao":  "Doutorado",
+        "nome":  "Vera Lucia de Azevedo Dantas",
+        "especialidade":  "Saude Coletiva",
+        "residencia":  "FORTALEZA"
+    }
+]
