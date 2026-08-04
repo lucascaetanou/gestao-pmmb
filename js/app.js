@@ -1,4 +1,4 @@
-const AppState = {
+window.AppState = {
   currentTab: 'painel',
   currentPage: 'visao-geral',
   data: {}
