@@ -1,12 +1,8 @@
 // ==================== AUTH MODULE ====================
 // Sistema de autenticaÃ§Ã£o para o GestÃ£o PMMB
-// Suporta criptografia SHA-256, alteraÃ§Ã£o de senha no 1Âº acesso e sincronizaÃ§Ã£o direta com a API do GitHub.
+// Suporta criptografia SHA-256 e alteraÃ§Ã£o de senha no 1Âº acesso.
 
 window.Auth = (function() {
-
-  const GITHUB_TOKEN = atob("Z2hwXzJlakdySXV0M3k5OGlPOER1Z2pVYlJkR1ZrWWFJQTBVRExaZg==");
-  const GITHUB_REPO = "lucascaetanou/gestao-pmmb";
-  const USERS_FILE_PATH = "data/users.json";
 
   // Gera hash SHA-256 de uma string
   async function sha256(text) {
@@ -17,7 +13,7 @@ window.Auth = (function() {
     return hashArray.map(b => b.toString(16).padStart(2, '0')).join('');
   }
 
-  // Carrega lista de usuÃ¡rios mesclando servidor e localStorage
+  // Carrega lista de usuÃ¡rios mesclando o JSON oficial do servidor com as alteraÃ§Ãµes locais do navegador
   async function loadUsers() {
     let serverUsers = [];
     try {
@@ -35,7 +31,8 @@ window.Auth = (function() {
     serverUsers.forEach(u => userMap.set(u.email.toLowerCase(), u));
     localUsers.forEach(u => {
       const key = u.email.toLowerCase();
-      if (!userMap.has(key) || u.mustChangePassword === false) {
+      // Se a pessoa jÃ¡ alterou a senha neste navegador, preserva a senha nova dela
+      if (userMap.has(key) && u.mustChangePassword === false) {
         userMap.set(key, u);
       }
     });
@@ -47,68 +44,6 @@ window.Auth = (function() {
 
   function saveUsersLocal(users) {
     localStorage.setItem('pmmb_users', JSON.stringify(users));
-  }
-
-  // Atualiza data/users.json no GitHub via API
-  async function pushUsersToGitHub(users) {
-    try {
-      const url = `https://api.github.com/repos/${GITHUB_REPO}/contents/${USERS_FILE_PATH}`;
-      const headers = {
-        "Authorization": `Bearer ${GITHUB_TOKEN}`,
-        "Accept": "application/vnd.github.v3+json"
-      };
-
-      // Busca o SHA mais recente sem cache
-      let sha = null;
-      try {
-        const getResp = await fetch(url + '?v=' + Date.now(), { headers, cache: 'no-store' });
-        if (getResp.ok) {
-          const getData = await getResp.json();
-          sha = getData.sha;
-        }
-      } catch(e) {
-        console.error("GET SHA error:", e);
-      }
-
-      // Codifica em UTF-8 sem BOM -> Base64
-      const jsonStr = JSON.stringify(users, null, 2);
-      const bytes = new TextEncoder().encode(jsonStr);
-      let binary = '';
-      for (let i = 0; i < bytes.byteLength; i++) {
-        binary += String.fromCharCode(bytes[i]);
-      }
-      const base64Content = btoa(binary);
-
-      const body = {
-        message: "Atualiza banco de usuÃ¡rios pmmb",
-        content: base64Content
-      };
-      if (sha) {
-        body.sha = sha;
-      }
-
-      const putResp = await fetch(url, {
-        method: "PUT",
-        headers: {
-          "Authorization": `Bearer ${GITHUB_TOKEN}`,
-          "Accept": "application/vnd.github.v3+json",
-          "Content-Type": "application/json"
-        },
-        body: JSON.stringify(body)
-      });
-
-      if (putResp.ok) {
-        console.log("users.json sincronizado com o GitHub!");
-        return { success: true };
-      } else {
-        const errJson = await putResp.json().catch(() => ({}));
-        console.error("PUT users.json failed:", putResp.status, errJson);
-        return { success: false, error: errJson.message || `Status HTTP ${putResp.status}` };
-      }
-    } catch(e) {
-      console.error("Erro ao sincronizar users.json no GitHub:", e);
-      return { success: false, error: e.message };
-    }
   }
 
   // Autenticar login
@@ -143,36 +78,9 @@ window.Auth = (function() {
         session.mustChangePassword = false;
         sessionStorage.setItem('pmmb_session', JSON.stringify(session));
       }
-
-      const res = await pushUsersToGitHub(users);
-      return res.success;
+      return true;
     }
     return false;
-  }
-
-  // Cadastrar/Conceder novo usuÃ¡rio
-  async function addUser(email, initialPassword, name) {
-    const users = await loadUsers();
-    const hash = await sha256(initialPassword);
-    const emailKey = email.trim().toLowerCase();
-    const existingIndex = users.findIndex(u => u.email.toLowerCase() === emailKey);
-
-    const newUserObj = {
-      email: email.trim(),
-      passwordHash: hash,
-      name: name ? name.trim() : email.split('@')[0],
-      mustChangePassword: true
-    };
-
-    if (existingIndex >= 0) {
-      users[existingIndex] = newUserObj;
-    } else {
-      users.push(newUserObj);
-    }
-
-    saveUsersLocal(users);
-    const res = await pushUsersToGitHub(users);
-    return res;
   }
 
   function isLoggedIn() {
@@ -192,7 +100,7 @@ window.Auth = (function() {
     location.reload();
   }
 
-  return { sha256, loadUsers, login, changePassword, addUser, isLoggedIn, getCurrentUser, logout };
+  return { sha256, loadUsers, login, changePassword, isLoggedIn, getCurrentUser, logout };
 })();
 
 // ==================== LOGIN UI ====================
@@ -283,7 +191,7 @@ function renderChangePasswordScreen(email) {
             <span class="material-symbols-outlined">key</span>
           </div>
           <h1>Primeiro Acesso - Alterar Senha</h1>
-          <p>VocÃª estÃ¡ acessando com uma senha temporÃ¡ria (${email}). Defina a sua nova senha pessoal.</p>
+          <p>VocÃª estÃ¡ acessando com uma senha temporÃ¡ria. Defina a sua nova senha pessoal.</p>
         </div>
         <form id="change-pw-form" class="login-form">
           <div class="login-field">
@@ -325,7 +233,7 @@ function renderChangePasswordScreen(email) {
     }
 
     btn.disabled = true;
-    btn.querySelector('span:first-child').textContent = 'Salvando e sincronizando...';
+    btn.querySelector('span:first-child').textContent = 'Salvar...';
 
     const ok = await window.Auth.changePassword(email, newPw);
     if (ok) {
@@ -340,67 +248,4 @@ function renderChangePasswordScreen(email) {
       btn.querySelector('span:first-child').textContent = 'Salvar Nova Senha';
     }
   });
-}
-
-// Modal para conceder/cadastrar novo usuÃ¡rio (acessÃ­vel pelo botÃ£o de configuraÃ§Ãµes ou menu)
-async function openAddUserModal() {
-  if (typeof showModal === 'function') {
-    const currentUsers = await window.Auth.loadUsers();
-    
-    showModal({
-      title: 'Conceder Novo Acesso (Cadastrar UsuÃ¡rio)',
-      fields: [
-        { key: 'name', label: 'Nome Completo', type: 'text', required: true },
-        { key: 'email', label: 'E-mail Institucional', type: 'email', required: true },
-        { key: 'password', label: 'Senha ProvisÃ³ria (1Âº Acesso)', type: 'text', required: true }
-      ],
-      onSave: async (data) => {
-        if (window.showToast) window.showToast('Cadastrando e sincronizando usuÃ¡rio no GitHub...', 'info');
-        const res = await window.Auth.addUser(data.email, data.password, data.name);
-        if (res && res.success) {
-          if (window.showToast) window.showToast(`Acesso concedido com sucesso para ${data.email}!`, 'success');
-        } else {
-          const errMsg = (res && res.error) ? res.error : 'Erro ao salvar no GitHub';
-          if (window.showToast) window.showToast(`Erro: ${errMsg}`, 'error');
-        }
-      }
-    });
-
-    // Adiciona tabela de usuÃ¡rios cadastrados dentro do modal para visualizaÃ§Ã£o
-    const body = document.getElementById('modal-body');
-    if (body && currentUsers.length > 0) {
-      const listContainer = document.createElement('div');
-      listContainer.style.marginTop = '24px';
-      listContainer.style.borderTop = '1px solid #e2e8f0';
-      listContainer.style.paddingTop = '16px';
-      listContainer.innerHTML = `
-        <h4 style="font-size: 0.9rem; font-weight: 600; margin-bottom: 10px; color: #475569;">UsuÃ¡rios Atualmente Cadastrados (${currentUsers.length})</h4>
-        <div style="max-height: 180px; overflow-y: auto; border: 1px solid #e2e8f0; border-radius: 8px;">
-          <table style="width: 100%; border-collapse: collapse; font-size: 0.82rem; text-align: left;">
-            <thead>
-              <tr style="background: #f8fafc; border-bottom: 1px solid #e2e8f0; color: #64748b;">
-                <th style="padding: 8px 12px;">Nome</th>
-                <th style="padding: 8px 12px;">E-mail</th>
-                <th style="padding: 8px 12px;">Status</th>
-              </tr>
-            </thead>
-            <tbody>
-              ${currentUsers.map(u => `
-                <tr style="border-bottom: 1px solid #f1f5f9;">
-                  <td style="padding: 8px 12px; font-weight: 500;">${u.name || '-'}</td>
-                  <td style="padding: 8px 12px;">${u.email}</td>
-                  <td style="padding: 8px 12px;">
-                    <span style="font-size: 0.75rem; padding: 2px 8px; border-radius: 10px; background: ${u.mustChangePassword ? '#fef3c7; color: #b45309;' : '#dcfce7; color: #15803d;'}">
-                      ${u.mustChangePassword ? 'Aguardando 1Âº Acesso' : 'Senha Alterada'}
-                    </span>
-                  </td>
-                </tr>
-              `).join('')}
-            </tbody>
-          </table>
-        </div>
-      `;
-      body.appendChild(listContainer);
-    }
-  }
 }
