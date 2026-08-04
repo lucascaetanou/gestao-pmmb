@@ -165,11 +165,15 @@ function showModal(config) {
   });
   
   overlay.style.display = 'flex';
+  overlay.classList.add('active');
 }
 
 function hideModal() {
   const overlay = document.getElementById('modal-overlay');
-  if (overlay) overlay.style.display = 'none';
+  if (overlay) {
+    overlay.classList.remove('active');
+    overlay.style.display = 'none';
+  }
 }
 
 function showToast(message, type = 'info') {
