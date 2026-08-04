@@ -4,6 +4,9 @@ const AppState = {
   data: {}
 };
 
+// Limpa dados antigos do localStorage para garantir que os dados frescos do servidor sejam usados
+['medicos', 'supervisores', 'secretarios', 'referencias', 'instituicoes', 'processos', 'tutores'].forEach(k => localStorage.removeItem('pmmb_' + k));
+
 async function loadData() {
   const files = ['medicos', 'supervisores', 'secretarios', 'referencias', 'instituicoes', 'processos', 'tutores'];
   for (const file of files) {
